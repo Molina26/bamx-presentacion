@@ -1,5 +1,10 @@
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('/sw.js');
+  const path = window.location.origin;
+  const mount = path.includes('localhost') ? '/sw.js' : 'https://molina26.github.io/bamx-presentacion'
+
+  console.log(path);
+  console.log(mount);
+  navigator.serviceWorker.register(mount);
 }
 
 const btnCamera = document.getElementById("btnCamera");
